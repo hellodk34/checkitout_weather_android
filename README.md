@@ -35,12 +35,6 @@
 
 ## 开始使用
 
-### 前置条件
-
-- Android Studio Koala Feature Drop (2024.1.2) 或更高版本
-- JDK 17
-- 一台 Android 13+ 的设备或模拟器
-
 ### 配置和风天气 API
 
 1. 注册[和风天气控制台](https://console.qweather.com/) 账号
