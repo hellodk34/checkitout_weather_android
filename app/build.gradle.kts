@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.checkitout.weather"
-        minSdk = 33
+        minSdk = 21
         targetSdk = 35
         versionCode = 2
         versionName = "1.1.0"
