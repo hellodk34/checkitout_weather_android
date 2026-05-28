@@ -61,11 +61,17 @@ data class DomainSunInfo(
     val sunset: String
 )
 
+data class DomainUvInfo(
+    val level: Int,
+    val category: String
+)
+
 data class DomainWeatherData(
     val city: DomainCity,
     val current: DomainCurrentWeather?,
     val forecast: List<DomainForecastDay>,
     val yesterday: DomainForecastDay?,
+    val uvInfo: DomainUvInfo?,
     val air: DomainAirQuality?,
     val sun: DomainSunInfo?
 )

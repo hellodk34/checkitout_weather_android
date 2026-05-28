@@ -106,6 +106,19 @@ data class Concentration(
     val value: Double?
 )
 
+data class IndicesResponse(
+    val code: String,
+    val daily: List<IndexItem>?
+)
+
+data class IndexItem(
+    val type: String?,
+    val name: String?,
+    val level: String?,
+    val category: String?,
+    val text: String?
+)
+
 data class SunResponse(
     val code: String,
     val sunrise: String?,

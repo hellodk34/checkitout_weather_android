@@ -114,6 +114,20 @@ class WeatherRepository(
             null
         }
 
+        val uvInfo = try {
+            val uvResp = api.getLifeIndices(location = city.id)
+            if (uvResp.code == "200") {
+                uvResp.daily?.firstOrNull()?.let { item ->
+                    DomainUvInfo(
+                        level = item.level?.toIntOrNull() ?: 0,
+                        category = item.category ?: ""
+                    )
+                }
+            } else null
+        } catch (_: Exception) {
+            null
+        }
+
         val sun = try {
             val today = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
             val sunResp = api.getSunInfo(city.id, today)
@@ -132,6 +146,7 @@ class WeatherRepository(
             current = current,
             forecast = forecast,
             yesterday = yesterday,
+            uvInfo = uvInfo,
             air = air,
             sun = sun
         )

@@ -38,6 +38,12 @@ interface QWeatherApi {
         @Path("location") location: String
     ): AirQualityResponse
 
+    @GET("v7/indices/1d")
+    suspend fun getLifeIndices(
+        @Query("type") type: Int = 5,
+        @Query("location") location: String
+    ): IndicesResponse
+
     @GET("v7/astronomy/sun")
     suspend fun getSunInfo(
         @Query("location") location: String,
